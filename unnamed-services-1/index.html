@@ -3,49 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Content Creator Platform</title>
+    <title>AI 콘텐츠 크리에이터 플랫폼</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            margin-top: 20px;
-        }
-        nav ul {
-            list-style: none;
             padding: 0;
-        }
-        nav ul li {
-            margin: 10px 0;
-        }
-        nav ul li a {
-            text-decoration: none;
+            background-color: #f8f9fa;
             color: #333;
-            font-size: 18px;
+            line-height: 1.6;
         }
-        nav ul li a:hover {
-            color: #007BFF;
+        /* Header 스타일 */
+        header {
+            background-color: #3a3f51;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        /* Main 스타일 */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #3a3f51;
+            font-size: 26px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
         }
         section {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
         }
-        h1, h2 {
+        /* 리스트 스타일: Markdown 스타일 적용 */
+        ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        ul li {
             margin-bottom: 10px;
+            padding-left: 5px;
+            color: #555;
+            font-size: 18px;
+            position: relative;
         }
-        p {
-            line-height: 1.6;
+        ul li:before {
+            content: "•";
+            position: absolute;
+            left: -15px;
+            top: 0;
+            color: #3a3f51;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        /* Footer 스타일 */
+        footer {
+            background-color: #3a3f51;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 0;
         }
         .highlight {
             background-color: #ffeb3b;
@@ -66,26 +101,26 @@
 </head>
 <body>
     <header>
-        <h1>AI Content Creator Platform</h1>
+        <h1>AI 콘텐츠 크리에이터 플랫폼</h1>
     </header>
 
     <div class="highlight">
-        <a href="mailto:1500sheep@gmail.com">서비스에 대한 궁금한 점과 참여하고 싶은 분들은 언제든지 연락 부탁드립니다</a>
+        <a href="mailto:1500sheep@gmail.com">서비스에 대한 궁금한 점과 참여하고 싶은 분들은 언제든지 연락 부탁드립니다 (1500sheep@gmail.com)</a>
     </div>
     
     <section>
-        <h2>Description</h2>
-        <p>The AI Content Creator Platform is a subscription-based service that allows creators to upload and manage their content, including videos, images, and posts. The platform offers AI-powered tools for creators to generate and enhance their content, making it easier for them to produce high-quality materials. Users can subscribe to their favorite creators and receive personalized content recommendations based on their preferences, age, and gender.</p>
+        <h2>서비스 설명</h2>
+        <p>AI 콘텐츠와 구독, 결제, 화상 서비스를 제공하는 크리에이터 구독 플랫폼.</p>
     </section>
 
     <nav>
         <ul>
-            <li><a href="./description">Description</a></li>
-            <li><a href="./develop">Develop</a></li>
+            <li><a href="./description">서비스 기능 설명</a></li>
+            <li><a href="./develop">기술</a></li>
             <ul>
-                <li><a href="./develop/micro-services">Micro-Services</a></li>
-                <li><a href="./develop/system-architecture">System Architecture</a></li>
-                <li><a href="./develop/tech-stacks">Tech Stacks</a></li>
+                <li><a href="./develop/tech-stacks">기술 스택</a></li>
+                <li><a href="./develop/micro-services">서비스 구성 요소(마이크로 서비스)</a></li>
+                <li><a href="./develop/system-architecture">시스템 아키텍처</a></li>
             </ul>
         </ul>
     </nav>
