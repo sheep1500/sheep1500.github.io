@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Architecture Components</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Header 스타일 */
+        header {
+            background-color: #3a3f51;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        /* Main 스타일 */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #3a3f51;
+            font-size: 26px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        /* 리스트 스타일: Markdown 스타일 적용 */
+        ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 5px;
+            color: #555;
+            font-size: 18px;
+            position: relative;
+        }
+        ul li:before {
+            content: "•";
+            position: absolute;
+            left: -15px;
+            top: 0;
+            color: #3a3f51;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        /* Footer 스타일 */
+        footer {
+            background-color: #3a3f51;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>System Architecture Components</h1>
+    <p>시스템 아키텍처 구성 목록</p>
+</header>
+
+<main>
+    <section>
+    <h2>System Architecture Components</h2>
+    <hr>
+    <div>
+        <h3>1. API Gateway</h3>
+        <p><strong>Role:</strong> API Gateway handles incoming client requests, routing them to the appropriate microservices. It also performs functions such as authentication, authorization, load balancing, caching, and request throttling.</p>
+        <p><strong>Technologies:</strong> Kong, NGINX, AWS API Gateway</p>
+    </div>
+    
+    <div>
+        <h3>2. Service Mesh</h3>
+        <p><strong>Role:</strong> Manages communication between microservices, providing features such as security, logging, traffic management, service discovery, and TLS encryption.</p>
+        <p><strong>Technologies:</strong> Istio, Linkerd</p>
+    </div>
+    
+    <div>
+        <h3>3. User Service</h3>
+        <p><strong>Role:</strong> Provides user management (login, signup, profile management) and authentication/authorization (JWT/OAuth) functionalities.</p>
+        <p><strong>Database:</strong> MySQL (user information storage)</p>
+    </div>
+    
+    <div>
+        <h3>4. Subscription Service</h3>
+        <p><strong>Role:</strong> Handles subscriptions and payments. Tracks user subscription status and manages payment processing and status updates.</p>
+        <p><strong>Payment Systems:</strong> Stripe API, PayPal API</p>
+        <p><strong>Database:</strong> MySQL (subscription records storage)</p>
+    </div>
+    
+    <div>
+        <h3>5. Content Management Service</h3>
+        <p><strong>Role:</strong> Manages content (videos, images, posts) uploaded by creators. Stores metadata in the database, and files are stored in cloud storage.</p>
+        <p><strong>Database:</strong> MySQL (metadata storage)</p>
+        <p><strong>Storage:</strong> AWS S3, Google Cloud Storage</p>
+    </div>
+    
+    <div>
+        <h3>6. News Feed Service</h3>
+        <p><strong>Role:</strong> Constructs and delivers personalized content feeds based on user subscriptions. Fetches the latest content from subscribed creators and provides a personalized feed to users.</p>
+        <p><strong>Database:</strong> Redis (feed caching), Elasticsearch (feed search and sorting)</p>
+    </div>
+    
+    <div>
+        <h3>7. Recommendation Service</h3>
+        <p><strong>Role:</strong> Provides personalized content recommendations by analyzing user age, gender, preferences, and behavior data.</p>
+        <p><strong>AI/ML Models:</strong> TensorFlow, PyTorch</p>
+        <p><strong>Database:</strong> NoSQL DB (user behavior data storage)</p>
+    </div>
+    
+    <div>
+        <h3>8. Notification Service</h3>
+        <p><strong>Role:</strong> Processes real-time notifications between subscribers and creators, such as new content, payment failures, and subscription expirations.</p>
+        <p><strong>Technologies:</strong> Firebase Cloud Messaging (FCM), Apple Push Notification Service (APNS), SendGrid (email)</p>
+    </div>
+    
+    <div>
+        <h3>9. Analytics Service</h3>
+        <p><strong>Role:</strong> Analyzes user behavior to provide statistical information to administrators and creators. Collects data on traffic, user engagement, and revenue statistics.</p>
+        <p><strong>Technologies:</strong> Google Analytics, Prometheus (monitoring), Grafana (dashboard visualization)</p>
+    </div>
+    
+    <div>
+        <h3>10. Payment Service</h3>
+        <p><strong>Role:</strong> Manages subscription payments, payment history, and creator revenue distribution.</p>
+        <p><strong>Technologies:</strong> Stripe, PayPal, Bank APIs (for creator payouts)</p>
+    </div>
+    
+    <div>
+        <h3>11. Messaging Service</h3>
+        <p><strong>Role:</strong> Provides real-time messaging between subscribers and creators.</p>
+        <p><strong>Technologies:</strong> WebSockets, RabbitMQ, Redis (real-time message queue)</p>
+    </div>
+    
+    <div>
+        <h3>12. Admin Service</h3>
+        <p><strong>Role:</strong> Provides dashboards for administrators to manage users, content, and subscription statuses. Also includes tools for monitoring system status and intervening when necessary.</p>
+    </div>
+    
+    <div>
+        <h3>13. Content Moderation Service</h3>
+        <p><strong>Role:</strong> Monitors and analyzes content for policy compliance. Uses AI models to automatically detect inappropriate content.</p>
+        <p><strong>Technologies:</strong> AI-based image analysis services (Google Cloud Vision, AWS Rekognition)</p>
+    </div>
+    
+    <div>
+        <h3>14. Search Service</h3>
+        <p><strong>Role:</strong> Handles searching for creators, content, and categories, allowing users to quickly find content.</p>
+        <p><strong>Technologies:</strong> Elasticsearch, Solr</p>
+    </div>
+    
+    <div>
+        <h3>15. Media Service</h3>
+        <p><strong>Role:</strong> Handles media processing after video and image uploads. Provides resizing, encoding, and streaming capabilities.</p>
+        <p><strong>Technologies:</strong> FFmpeg, CloudFront (CDN)</p>
+    </div>
+    
+    <div>
+        <h3>16. Video Chat Service</h3>
+        <p><strong>Role:</strong> Provides video chat functionality between creators and subscribers.</p>
+        <p><strong>Technologies:</strong> WebRTC, Messaging Service</p>
+    </div>
+    
+    <hr>
+    
+    <h3>Microservices Communication</h3>
+    <ul>
+        <li><strong>gRPC (Service-to-Service Communication):</strong> gRPC is used for high-performance communication between microservices, providing fast and efficient data transfer through a binary protocol.</li>
+        <li><strong>Message Broker (Asynchronous Communication):</strong> RabbitMQ or Apache Kafka is used to manage asynchronous event-driven communication. For example, the Notification Service can generate alerts via RabbitMQ when new content is posted.</li>
+        <li><strong>Event-Driven Architecture:</strong> All critical events (content uploads, payment success, etc.) are published and subscribed to through the Message Broker, maintaining loose coupling and scalability.</li>
+    </ul>
+    
+    <hr>
+    
+    <h3>System Architecture Diagram Explanation</h3>
+    <ol>
+        <li><strong>Client (Web & Mobile App)</strong> → <strong>API Gateway:</strong> Clients send all requests to the API Gateway, where authentication and request routing take place.</li>
+        <li><strong>API Gateway</strong> ↔ <strong>Microservices:</strong> The API Gateway routes client requests to the appropriate microservices, such as User Service, Subscription Service, and Content Management Service.</li>
+        <li><strong>Microservices Communication:</strong> Microservices communicate via gRPC or asynchronously using a Message Broker.</li>
+        <li><strong>AI Content Generation Service, Recommendation Service:</strong> These services communicate with User Service or Content Management Service when necessary to provide data or process requests.</li>
+        <li><strong>Database:</strong> Each microservice manages its own database, using PostgreSQL, Redis, Elasticsearch, etc.</li>
+    </ol>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2024 AI 콘텐츠 크리에이터 플랫폼</p>
+</footer>
+
+</body>
+</html>
