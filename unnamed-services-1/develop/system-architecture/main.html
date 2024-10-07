@@ -1,0 +1,124 @@
+<section>
+    <h2>System Design</h2>
+    <div>
+        <img src="https://github.com/user-attachments/assets/f81c6eac-dcea-45c0-95fe-69c3e700e26a" alt="시스템 디자인 이미지"/>
+    </div>
+    <h2>System Architecture Components</h2>
+    <div>
+        <h3>1. API Gateway</h3>
+        <p><strong>역할:</strong> API Gateway는 클라이언트로부터 요청을 받아 적절한 마이크로서비스로 전달합니다. 또한, 인증 및 권한 부여, 로드 밸런싱, 캐싱, 요청 제한 등의 기능을 수행합니다.</p>
+        <p><strong>기술:</strong> Kong, NGINX, AWS API Gateway</p>
+    </div>
+    
+    <div>
+        <h3>2. Service Mesh</h3>
+        <p><strong>역할:</strong> 마이크로서비스 간의 통신을 관리하고, 보안, 로깅, 트래픽 관리, 서비스 탐색, TLS 암호화와 같은 기능을 제공합니다.</p>
+        <p><strong>기술:</strong> Istio, Linkerd</p>
+    </div>
+    
+    <div>
+        <h3>3. User Service</h3>
+        <p><strong>역할:</strong> 사용자 관리 (로그인, 회원가입, 프로필 관리)와 인증/권한 부여 (JWT/OAuth) 기능을 제공합니다.</p>
+        <p><strong>Database:</strong> MySQL (사용자 정보 저장)</p>
+    </div>
+    
+    <div>
+        <h3>4. Subscription Service</h3>
+        <p><strong>역할:</strong> 구독 및 결제 처리. 사용자의 구독 상태를 추적하며, 결제 처리 및 상태 갱신을 담당합니다.</p>
+        <p><strong>결제 시스템:</strong> Stripe API, PayPal API</p>
+        <p><strong>Database:</strong> MySQL (구독 기록 저장)</p>
+    </div>
+    
+    <div>
+        <h3>5. Content Management Service</h3>
+        <p><strong>역할:</strong> 크리에이터가 업로드한 콘텐츠(동영상, 이미지, 게시글)를 관리합니다. 콘텐츠 메타데이터를 저장하고, 파일은 클라우드 스토리지에 저장합니다.</p>
+        <p><strong>Database:</strong> MySQL (메타데이터 저장)</p>
+        <p><strong>Storage:</strong> AWS S3, Google Cloud Storage</p>
+    </div>
+    
+    <div>
+        <h3>6. News Feed Service</h3>
+        <p><strong>역할:</strong> 사용자의 구독에 기반하여 콘텐츠 피드를 구성하고 제공합니다. 구독한 크리에이터의 최신 콘텐츠를 가져와 사용자에게 맞춤형 피드를 제공합니다.</p>
+        <p><strong>Database:</strong> Redis (피드 캐싱), Elasticsearch (피드 검색 및 정렬)</p>
+    </div>
+    
+    <div>
+        <h3>7. Recommendation Service</h3>
+        <p><strong>역할:</strong> 사용자의 구독에 기반하여 콘텐츠 피드를 구성하고 제공합니다. 구독한 크리에이터의 최신 콘텐츠를 가져와 사용자에게 맞춤형 피드를 제공합니다.</p>
+        <p><strong>AI/ML Models:</strong> TensorFlow, PyTorch</p>
+        <p><strong>Database:</strong> NoSQL DB (사용자 행동 데이터 저장)</p>
+    </div>
+    
+    <div>
+        <h3>8. Notification Service</h3>
+        <p><strong>역할:</strong> 구독자와 크리에이터 간의 실시간 알림을 처리합니다. 새로운 콘텐츠, 결제 실패, 구독 만료 등 중요한 이벤트에 대한 알림을 전송합니다.</p>
+        <p><strong>기술:</strong> Firebase Cloud Messaging (FCM), Apple Push Notification Service (APNS), SendGrid (email)</p>
+    </div>
+    
+    <div>
+        <h3>9. Analytics Service</h3>
+        <p><strong>역할:</strong> 사용자의 행동을 분석하여 관리자와 크리에이터에게 통계 정보를 제공합니다. 트래픽, 사용자 참여도, 수익 통계 등을 수집합니다.</p>
+        <p><strong>기술:</strong> Google Analytics, Prometheus (모니터링), Grafana (대시보드 시각화)</p>
+    </div>
+    
+    <div>
+        <h3>10. Payment Service</h3>
+        <p><strong>역할:</strong> 사용자의 행동을 분석하여 관리자와 크리에이터에게 통계 정보를 제공합니다. 트래픽, 사용자 참여도, 수익 통계 등을 수집합니다.</p>
+        <p><strong>기술:</strong> Stripe, PayPal, 은행 API (크리에이터 수익 분배)</p>
+    </div>
+    
+    <div>
+        <h3>11. Messaging Service</h3>
+        <p><strong>역할:</strong> 구독자와 크리에이터 간의 실시간 메시징 기능을 제공합니다.</p>
+        <p><strong>기술:</strong> WebSockets, RabbitMQ, Redis (실시간 메시지 큐)</p>
+    </div>
+    
+    <div>
+        <h3>12. Admin Service</h3>
+        <p><strong>역할:</strong> 관리자용 대시보드 제공 및 사용자, 콘텐츠, 구독 상태를 관리합니다. 시스템 상태를 모니터링하고, 필요 시 개입할 수 있는 도구를 제공합니다.</p>
+    </div>
+    
+    <div>
+        <h3>13. Content Moderation Service</h3>
+        <p><strong>역할:</strong> 업로드된 콘텐츠의 규정 준수 여부를 분석하고 모니터링합니다. AI 모델을 사용해 부적절한 콘텐츠를 자동으로 감지합니다.</p>
+        <p><strong>기술:</strong> AI 이미지 분석 서비스 (Google Cloud Vision, AWS Rekognition)</p>
+    </div>
+    
+    <div>
+        <h3>14. Search Service</h3>
+        <p><strong>역할:</strong> 크리에이터, 콘텐츠, 카테고리 검색을 처리하며 사용자가 빠르게 콘텐츠를 찾을 수 있도록 지원합니다.</p>
+        <p><strong>기술:</strong> Elasticsearch, Solr</p>
+    </div>
+    
+    <div>
+        <h3>15. Media Service</h3>
+        <p><strong>역할:</strong> 동영상 및 이미지 업로드 후 미디어 처리를 수행합니다. 크기 조정, 인코딩, 스트리밍 기능을 제공합니다.</p>
+        <p><strong>기술:</strong> FFmpeg, CloudFront (CDN)</p>
+    </div>
+    
+    <div>
+        <h3>16. Chat(Video) Service</h3>
+        <p><strong>역할:</strong> 크리에이터와 구독자 간의 채팅(화상) 기능을 제공합니다.</p>
+        <p><strong>기술:</strong> WebRTC, Messaging Service</p>
+    </div>
+    
+    <hr>
+    
+    <h3>Microservices Communication</h3>
+    <ul>
+        <li><strong>gRPC (Service-to-Service Communication):</strong> 각 마이크로서비스 간 고성능 통신을 위해 gRPC를 사용합니다. gRPC는 바이너리 프로토콜로 빠르고 효율적인 데이터 전송을 제공합니다.</li>
+        <li><strong>Message Broker (Asynchronous Communication):</strong> RabbitMQ 또는 Apache Kafka를 사용해 비동기 이벤트 기반 통신을 관리합니다. 예를 들어, Notification Service는 새로운 콘텐츠가 게시될 때 RabbitMQ를 통해 알림을 생성할 수 있습니다.</li>
+        <li><strong>Event-Driven Architecture:</strong> 모든 중요한 이벤트(콘텐츠 업로드, 결제 성공 등)는 Message Broker를 통해 발행되고 구독됩니다. 이를 통해 느슨한 결합을 유지하며 확장성을 높일 수 있습니다.</li>
+    </ul>
+    
+    <hr>
+    
+    <h3>System Architecture Diagram Explanation</h3>
+    <ol>
+        <li><strong>Client (Web & Mobile App)</strong> → <strong>API Gateway:</strong> 클라이언트는 모든 요청을 API Gateway로 전송합니다. 여기서 인증 및 요청 라우팅이 이루어집니다.</li>
+        <li><strong>API Gateway</strong> ↔ <strong>Microservices:</strong> API Gateway는 클라이언트 요청을 적절한 마이크로서비스로 전달합니다. User Service, Subscription Service, Content Management Service 등은 API Gateway를 통해 클라이언트 요청을 처리합니다.</li>
+        <li><strong>Microservices 통신:</strong> 각 마이크로서비스는 필요할 때 gRPC를 통해 서로 통신하거나, Message Broker를 통해 비동기적으로 이벤트를 주고받습니다.</li>
+        <li><strong>AI Content Generation Service, Recommendation Service:</strong> AI 기능을 제공하는 서비스는 필요할 때 User Service나 Content Management Service와 통신하여 데이터를 제공하거나 요청을 처리합니다.</li>
+        <li><strong>Database:</strong> 각 마이크로서비스는 자신의 데이터베이스를 사용하여 데이터를 관리합니다. 예: PostgreSQL, Redis, Elasticsearch 등.</li>
+    </ol>
+</section>

@@ -1,142 +1,23 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>기술 스택</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        /* Header 스타일 */
-        header {
-            background-color: #3a3f51;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-size: 24px;
-        }
-        header h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-        header p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-        /* Main 스타일 */
-        main {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h2 {
-            color: #3a3f51;
-            font-size: 26px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        /* 리스트 스타일: Markdown 스타일 적용 */
-        ul {
-            padding-left: 20px;
-            list-style-type: disc;
-        }
-        ul li {
-            margin-bottom: 10px;
-            padding-left: 5px;
-            color: #555;
-            font-size: 18px;
-            position: relative;
-        }
-        ul li:before {
-            content: "•";
-            position: absolute;
-            left: -15px;
-            top: 0;
-            color: #3a3f51;
-            font-size: 22px;
-            font-weight: bold;
-        }
-        /* Footer 스타일 */
-        footer {
-            background-color: #3a3f51;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 16px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-        }
-        footer p {
-            margin: 0;
-        }
-    </style>
+    <title>AI 콘텐츠 크리에이터 플랫폼</title>
+    <link rel="stylesheet" href="/unnamed-services-1/common/css/style.css">
+    <script src="/unnamed-services-1/common/js/includeHTML.js"></script>
 </head>
 <body>
-
-<header>
-    <h1>기술 스택</h1>
-    <p>AI 콘텐츠 크리에이터 플랫폼을 위한 기술적 구성 요소</p>
-</header>
-
-<main>
-    <section>
-        <h2>Backend</h2>
-        <ul>
-            <li>언어: Java Spring Boot</li>
-            <li>DB: MySQL</li>
-            <li>캐싱: Redis</li>
-            <li>Storage: Cloud Storage(videos, images)</li>
-            <li>Authentication: JWT, OAuth</li>
-            <li>결제 통합: 결제 서비스(페이팔..?)</li>
-            <li>AI Services: Python-based microservices for AI-related tasks (e.g., content generation and recommendation), TensorFlow or PyTorch</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Frontend</h2>
-        <ul>
-            <li>프레임워크: React, React Native</li>
-            <li>UI Library: Tailwind CSS</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>AI & Machine Learning</h2>
-        <ul>
-            <li>Natural Language Processing (NLP): GPT-based models for content generation and text-based recommendations</li>
-            <li>Computer Vision: Deep learning models for image and video enhancements or categorization</li>
-            <li>Recommendation Systems: Collaborative filtering or content-based filtering (using TensorFlow, PyTorch) to personalize user content feeds</li>
-            <li>Analytics & Tracking: Google Analytics and custom ML pipelines for tracking and analyzing user behavior</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>DevOps & Deployment</h2>
-        <ul>
-            <li>Cloud Provider: AWS, Google Cloud, Naver Cloud</li>
-            <li>CI/CD: Jenkins</li>
-            <li>Containerization: Docker for containerizing services, Kubernetes for orchestration</li>
-            <li>Monitoring: Prometheus and Grafana for performance monitoring and alerting</li>
-        </ul>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2024 AI 콘텐츠 크리에이터 플랫폼</p>
-</footer>
-
+    <header>
+        <h1>개발 스택</h1>
+        <p>AI 콘텐츠 크리에이터 플랫폼을 위한 기술적 구성 요소</p>
+    </header>
+    <div class="highlight" include-html="/unnamed-services-1/common/html/highlight.html"></div>
+    <main include-html="./main.html"></main>
+    <footer include-html="/unnamed-services-1/common/html/footer.html"></footer>
 </body>
 </html>
+
+<script>
+    includeHTML();
+</script>
